@@ -1,0 +1,17 @@
+.nav-side {
+    display: flex inline;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 100vh;
+    padding: 0 20px 0 20px;
+}
+
+ul {
+    padding: 0;
+}
+
+.nav-side-li {
+    padding:  10px 0px;
+}
