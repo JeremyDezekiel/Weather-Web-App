@@ -1,5 +1,5 @@
-.nav-side {
-    display: flex inline;
+.nav-aside {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
@@ -14,4 +14,28 @@ ul {
 
 .nav-side-li {
     padding:  10px 0px;
+}
+
+.div-header-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.search {
+    width: 500px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #F2F2F2;
+}
+
+.header-ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.header-icon {
+    padding: 0 20px;
 }
