@@ -17,11 +17,12 @@
 
             </div>
             <div class="col-8 row">
-                <form class=" text-end">
+                <form class="text-end">
                     <input class="ps-5 rounded-4" type="" placeholder="Search Location ..." aria-label="">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </form>
             </div>
-            <div class="col-2 row">
+            <div class="col-2 row" id="timeDateToday">
                 <div class="text-center">
                     <h5 class="m-0">Time</h5>
                     <h5 class="m-0">Date</h5>
@@ -31,7 +32,7 @@
         <section>
             <div class="row">
                 <div class="border col-12 col-sm-6 rounded-5">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center" id="todayWeather">
                         <div class="col-12 col-sm-6">
                             <div class="d-flex align-items-center justify-content-center">
                                 <img width="30px"
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="iframe-wrapper border col-12 col-sm-6 rounded-5">
+                <div class="iframe-wrapper border col-12 col-sm-6 rounded-5" id="maps">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4975115.97731173!2d110.30758187857907!3d-8.2524505550458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1731521604270!5m2!1sid!2sid"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -72,10 +73,10 @@
             </div>
         </section>
         <section>
-            <div class="row justify-content-center">
+            <div class="row justify-content-around">
                 <!--Weekly-->
-                <div class="col-12 col-sm-4">
-                    <div class="d-flex justify-content-between align-items-center">
+                <div class="col-12 col-sm-4" id="days">
+                    <!-- <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <span>Monday</span>
                         </div>
@@ -87,78 +88,10 @@
                             <span>34°</span>
                             <span>26°</span>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <span>Tuesday</span>
-                        </div>
-                        <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                            <span>56%</span>
-                            <img width="50px" src="asset/cloudy.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy.gif" alt="cloudy-night">
-                            <span>34°</span>
-                            <span>26°</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Wednesday</span>
-                        <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                            <span>56%</span>
-                            <img width="50px" src="asset/cloudy-day.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy-night.gif" alt="cloudy-night">
-                            <span>34°</span>
-                            <span>26°</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Thursday</span>
-                        <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                            <span>56%</span>
-                            <img width="50px" src="asset/cloudy-day.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy-night.gif" alt="cloudy-night">
-                            <span>34°</span>
-                            <span>26°</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Friday</span>
-                        <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                            <span>56%</span>
-                            <img width="50px" src="asset/cloudy-day.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy-night.gif" alt="cloudy-night">
-                            <span>34°</span>
-                            <span>26°</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Saturday</span>
-                        <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                            <span>56%</span>
-                            <img width="50px" src="asset/cloudy-day.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy-night.gif" alt="cloudy-night">
-                            <span>34°</span>
-                            <span>26°</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Sunday</span>
-                        <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                            <span>56%</span>
-                            <img width="50px" src="asset/cloudy-day.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy-night.gif" alt="cloudy-night">
-                            <span>34°</span>
-                            <span>26°</span>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--Today-->
-                <div class="row col-12 col-sm-4">
+                <div class="row col-12 col-sm-4" id="todayAirTime">
                     <div class="text-center mt-3">
                         <h1>AIR QUALITY</h1>
                         <h5>161</h5>
@@ -207,14 +140,14 @@
                     </div>
                 </div>
                 <!--Tomorrow-->
-                <div class="row col-12 col-sm-4">
+                <div class="row col-12 col-sm-4 rounded-5" id="tomorrow">
                     <div class="col-12">
-                        <p class="mb-0">Tomorrow</p>
+                        <p class="mb-0 mt-3">Tomorrow</p>
                         <h3 class="mb-0">Surabaya,Indonesia</h3>
                     </div>
                     <div class="col-12 d-flex flex-column justify-content-end">
-                        <h3 class="mb-0">25°</h3>
-                        <p class="mb-0">Rainny</p>
+                        <h3 class="mb-0">25°C</h3>
+                        <p class="mb-3">Rainny</p>
                     </div>
                 </div>
             </div>
