@@ -59,28 +59,31 @@ function dailyDateFormated(date) {
     return dateFormatted.toLocaleDateString('en-US', options)
 }
 
-function hourlyTime(time) {
-    options = {
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        timeZone: "Asia/Singapore",
-        timeZoneName: "short",
-    }
-    const timeFormat = new Date(time)
-    return timeFormat.DateTimeFormat('en-US', options)
+let unixTime = Math.floor(Date.now() / 1000) + 7 * 3600;
+
+function formatTime(time) {
+    const hours = String(Math.floor(time / 3600) % 24).padStart(2, '0');
+    const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0');
+    const seconds = String(time % 60).padStart(2, '0');
+    return `${hours}:${minutes}:${seconds}`;
 }
 
-async function getDataDaily() {
-    try {
-        const fetchDaily = await fetch(URL)
-        const dataDaily = await fetchDaily.json()
+setInterval(() => {
+    document.getElementById('time').textContent = formatTime(unixTime++);
+}, 1000);
 
-        dataDaily.daily.weather_code.forEach((element, i) => {
+async function getData() {
+    try {
+        const fetchData = await fetch(URL)
+        const dataWeather = await fetchData.json()
+
+        document.getElementById('current').innerHTML = 
+
+        dataWeather.daily.weather_code.forEach((element, i) => {
             document.getElementById('weekly').innerHTML += `
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <span>${dailyDateFormated(dataDaily.daily.time[i])}</span>
+                        <span>${dailyDateFormated(dataWeather.daily.time[i])}</span>
                     </div>
                     <div>
                     <img width="50px" src="asset/water-drop.gif" alt="water-drop">
@@ -88,85 +91,20 @@ async function getDataDaily() {
                     <span>
                     ${showGifWeather(element)}
                     <span>
-                    <span>${dataDaily.daily.temperature_2m_max[i]}°C</span>
-                    <span>${dataDaily.daily.temperature_2m_min[i]}°C</span>
+                    <span>${dataWeather.daily.temperature_2m_max[i]}°C</span>
+                    <span>${dataWeather.daily.temperature_2m_min[i]}°C</span>
                     </div>
                 </div>
             `
-            tomorrow.innerHTML = `
-                    <div class="col-12">
-                        <p class="mb-0 mt-3">Tomorrow</p>
-                        <h3 class="mb-0">Surabaya,Indonesia</h3>
-                    </div>
-                    <div class="col-12 d-flex flex-column justify-content-end">
-                        <h3 class="mb-0">${dataDaily.daily.temperature_2m_min[1]}°C</h3>
-                        <p class="mb-3">${showWeatherText(element)}</p>
-                    </div>
-            `
+            // tomorrow.innerHTML = 
+
+            // dataWeather.hourly.time.forEach((element, i) => {
+            //     document.getElementById('hourly').innerHTML = 
+            // })
         })
     } catch (error) {
         console.error(error)
     }
 }
 
-getDataDaily()
-
-async function getDataCurrent() {
-    try {
-        const fetchCurrent = await fetch(URL)
-        const dataCurrent = await fetchCurrent.json()
-
-        console.log(dataCurrent)
-        
-    } catch (error) {
-        console.error(error)
-    }
-}
-
-// async function getDataCurrent() {
-//     try {
-//         const fetchCurrent = await fetch(URL)
-//         const dataCurrent = await fetchCurrent.json()
-
-//         dataCurrent.current.temperature_2m.forEach((element, i) => {
-//             current.innerHTML += `
-//                     <div class="row align-items-center">
-//                         <div class="col-12 col-sm-6">
-//                             <div class="d-flex align-items-center justify-content-center">
-//                                 <img width="30px"
-//                                     src="https://img.icons8.com/?size=100&id=c0kUjxdWTRsk&format=png&color=000000"
-//                                     alt="pin-location">
-//                                 <h3 class="fs-5 my-0">Surabaya, Indonesia</h3>
-//                             </div>
-//                             <div class="text-center">
-//                                 <h3>Weather</h3>
-//                                 <p>Now</p>
-//                                 <h1>${dataCurrent.current.temperature_2m[element]}C</h1>
-//                                 <p>Feels like 27°C</p>
-//                             </div>
-//                         </div>
-//                         <div class="col-12 col-sm-6">
-//                             <div class="text-center">
-//                                 <img class="w-50" src="asset/cloudy.gif" alt="cloudy">
-//                             </div>
-//                             <div class="d-flex justify-content-around">
-//                                 <span>
-//                                     <p>Visibility</p>
-//                                     <h1>4.3 Km</h1>
-//                                 </span>
-//                                 <span>
-//                                     <p class="fs-6">Humidity</p>
-//                                     <h1>80%</h1>
-//                                 </span>
-//                             </div>
-//                         </div>
-//                     </div>
-//             `
-//     })
-
-//     } catch (error) {
-//         console.error(error)
-//     }
-// }
-
-// getDataCurrent()
+getData()

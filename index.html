@@ -24,14 +24,14 @@
             </div>
             <div class="col-2 row" id="timeDateToday">
                 <div class="text-center">
-                    <h5 class="m-0">Time</h5>
+                    <h5 class="m-0" id="time">Time</h5>
                     <h5 class="m-0">Date</h5>
                 </div>
             </div>
         </header>
         <section>
             <div class="row">
-                <div class="border col-12 col-sm-6 rounded-5" id="current">
+                <div class="border col-12 col-sm-6 rounded-5">
                     <div class="row align-items-center">
                         <div class="col-12 col-sm-6">
                             <div class="d-flex align-items-center justify-content-center">
@@ -41,9 +41,9 @@
                                 <h3 class="fs-5 my-0">Surabaya, Indonesia</h3>
                             </div>
                             <div class="text-center">
-                                <h3>Weather</h3>
+                                <h3 id="currentWeather">Weather</h3>
                                 <p>Now</p>
-                                <h1>26°C</h1>
+                                <h1 id="currentTemperature">26°C</h1>
                                 <p>Feels like 27°C</p>
                             </div>
                         </div>
@@ -157,6 +157,20 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <!-- <script>
+        let unixTime = Math.floor(Date.now() / 1000) + 7 * 3600;
+    
+        function formatTime(time) {
+            const hours = String(Math.floor(time / 3600) % 24).padStart(2, '0');
+            const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0');
+            const seconds = String(time % 60).padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+    
+        setInterval(() => {
+            document.getElementById('time').textContent = formatTime(unixTime++);
+        }, 1000);
+    </script> -->
 </body>
 
 </html>
