@@ -1,5 +1,5 @@
-const URL = 'https://api.open-meteo.com/v1/forecast?latitude=-7.2492&longitude=112.7508&current=temperature_2m,apparent_temperature,is_day,weather_code&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,visibility&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=Asia%2FSingapore'
-
+const URL = 'https://api.open-meteo.com/v1/forecast?latitude=-7.2492&longitude=112.7508&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,visibility&daily=weather_code,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&timezone=Asia%2FSingapore'
+const AQI = 'https://air-quality-api.open-meteo.com/v1/air-quality?latitude=-7.2492&longitude=112.7508&current=pm2_5&forecast_days=1'
 function showGifWeather(code) {
     if (code == 0) {
         return '<img width="50px" src="gif/0.gif"/>'
@@ -48,7 +48,7 @@ function showWeatherText(code) {
     }
 }
 
-function dailyDateFormated(date) {
+function formattedDate(date) {
     const options = {
         weekday: 'long',
         year: 'numeric',
@@ -62,49 +62,125 @@ function dailyDateFormated(date) {
 let unixTime = Math.floor(Date.now() / 1000) + 7 * 3600;
 
 function formatTime(time) {
-    const hours = String(Math.floor(time / 3600) % 24).padStart(2, '0');
-    const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0');
-    const seconds = String(time % 60).padStart(2, '0');
-    return `${hours}:${minutes}:${seconds}`;
+    const hours = String(Math.floor(time / 3600) % 24).padStart(2, '0')
+    const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0')
+    const seconds = String(time % 60).padStart(2, '0')
+    return `${hours}:${minutes}:${seconds}`
+    // return `${hours}:${minutes}`
 }
 
 setInterval(() => {
     document.getElementById('time').textContent = formatTime(unixTime++);
-}, 1000);
+}, 1000)
 
 async function getData() {
     try {
         const fetchData = await fetch(URL)
         const dataWeather = await fetchData.json()
 
-        document.getElementById('current').innerHTML = 
+        document.getElementById('currentWeather').innerHTML =
+            showWeatherText(dataWeather.current.weather_code)
+        document.getElementById('currentTemperature').innerText =
+            dataWeather.current.temperature_2m + '°C'
+        document.getElementById('currentApparentTemperature').innerText =
+            'Feels like ' + dataWeather.current.apparent_temperature + '°C'
+        document.getElementById('date').innerText =
+            formattedDate(dataWeather.current.time)
 
-        dataWeather.daily.weather_code.forEach((element, i) => {
-            document.getElementById('weekly').innerHTML += `
+            dataWeather.daily.weather_code.forEach((element, i) => {
+                document.getElementById('weekly').innerHTML += `
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <span>${dailyDateFormated(dataWeather.daily.time[i])}</span>
+                        <span>${formattedDate(dataWeather.daily.time[i])}</span>
                     </div>
                     <div>
-                    <img width="50px" src="asset/water-drop.gif" alt="water-drop">
-                    <span>56%</span>
-                    <span>
-                    ${showGifWeather(element)}
-                    <span>
-                    <span>${dataWeather.daily.temperature_2m_max[i]}°C</span>
-                    <span>${dataWeather.daily.temperature_2m_min[i]}°C</span>
+
+                        <span>
+                            ${dataWeather.daily.wind_speed_10m_max[i]} Km/h
+                        </span>
+                        <span>
+                            ${showGifWeather(element)}
+                        <span>
+                        <span>
+                            ${dataWeather.daily.temperature_2m_max[i]}°C
+                        </span>
+                        <span>
+                            ${dataWeather.daily.temperature_2m_min[i]}°C
+                        </span>
                     </div>
                 </div>
             `
-            // tomorrow.innerHTML = 
+                document.getElementById('tomorrow').innerHTML =
+                    `<div class="col-12">
+                        <p class="mb-0 mt-3">Tomorrow</p>
+                        <h3 class="mb-0">Surabaya,Indonesia</h3>
+                    </div>
+                    <div class="col-12 d-flex flex-column justify-content-end">
+                        <h3 class="mb-0">${dataWeather.daily.temperature_2m_min[1]}°C</h3>
+                        <p class="mb-3">${showWeatherText(1)}</p>
+                    </div>`
 
-            // dataWeather.hourly.time.forEach((element, i) => {
-            //     document.getElementById('hourly').innerHTML = 
-            // })
-        })
+                dataWeather.hourly.time.forEach((element, i) => {
+                    document.getElementById('morning').innerText =
+                        showWeatherText(dataWeather.hourly.weather_code[6])
+                    document.getElementById('temperatureMorning').innerText =
+                        dataWeather.hourly.temperature_2m[6] + '°'
+                    document.getElementById('noon').innerText =
+                        showWeatherText(dataWeather.hourly.weather_code[12])
+                    document.getElementById('temperatureNoon').innerText =
+                        dataWeather.hourly.temperature_2m[12] + '°'
+                    document.getElementById('afternoon').innerText =
+                        showWeatherText(dataWeather.hourly.weather_code[18])
+                    document.getElementById('temperatureAfternoon').innerText =
+                        dataWeather.hourly.temperature_2m[18] + '°'
+                    document.getElementById('night').innerText =
+                        showWeatherText(dataWeather.hourly.weather_code[22])
+                    document.getElementById('temperatureNight').innerText =
+                        dataWeather.hourly.temperature_2m[22] + '°'
+                })
+            })
     } catch (error) {
         console.error(error)
+    } finally {
+
     }
 }
 
+async function getAQI() {
+    try {
+        const fetchAir = await fetch(AQI)
+        const dataAir = await fetchAir.json()
+
+        document.getElementById('dataAirQuality').innerText =
+            dataAir.current.pm2_5
+
+        if (dataAir.current.pm2_5 < 100) {
+            document.getElementById('bar').innerHTML =
+                `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-success" style="width: 25%"></div>
+                        </div>`
+        } else if (dataAir.current.pm2_5 > 100 && dataAir.current.pm2_5 <= 200) {
+            document.getElementById('bar').innerHTML =
+                `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-warning" style="width: 50%"></div>
+                    </div>`
+        } else if (dataAir.current.pm2_5 > 200 && dataAir.current.pm2_5 <= 300) {
+            document.getElementById('bar').innerHTML =
+                `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-danger" style="width: 75%"></div>
+                    </div>`
+        } else if (dataAir.current.pm2_5 > 300) {
+            document.getElementById('bar').innerHTML =
+                `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-black" style="width: 100%"></div>
+                    </div>`
+        }
+    } catch (error) {
+        console.error(error)
+    } finally {
+
+    }
+}
+
+getAQI()
 getData()
