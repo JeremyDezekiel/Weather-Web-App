@@ -1,5 +1,6 @@
 const URL = 'https://api.open-meteo.com/v1/forecast?latitude=-7.2492&longitude=112.7508&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,visibility&daily=weather_code,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&timezone=Asia%2FSingapore'
 const AQI = 'https://air-quality-api.open-meteo.com/v1/air-quality?latitude=-7.2492&longitude=112.7508&current=pm2_5&forecast_days=1'
+
 function showGifWeather(code) {
     if (code == 0) {
         return '<img width="50px" src="gif/0.gif"/>'
@@ -78,12 +79,16 @@ async function getData() {
         const fetchData = await fetch(URL)
         const dataWeather = await fetchData.json()
 
-        document.getElementById('currentWeather').innerHTML =
+        document.getElementById('currentWeather').innerText =
             showWeatherText(dataWeather.current.weather_code)
+        document.getElementById('currentGifWeather').innerHTML =
+            showGifWeather(dataWeather.current.weather_code)
         document.getElementById('currentTemperature').innerText =
             dataWeather.current.temperature_2m + '°C'
         document.getElementById('currentApparentTemperature').innerText =
             'Feels like ' + dataWeather.current.apparent_temperature + '°C'
+        document.getElementById('currentHumidity').innerText =
+            dataWeather.current.relative_humidity_2m + '%'
         document.getElementById('date').innerText =
             formattedDate(dataWeather.current.time)
 
@@ -184,3 +189,27 @@ async function getAQI() {
 
 getAQI()
 getData()
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg';
+
+navigator.geolocation.getCurrentPosition(succesLocation,
+    errorLocation, {
+        enableHighAccuracy: true
+    }
+)
+
+function succesLocation(position) {
+    setupMap([position.coords.longitude, position.coords.latitude])
+}
+
+function errorLocation() {}
+    // setupMap([])
+function setupMap(center) {
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        center: center, // starting position [lng, lat]. Note that lat must be set between -90 and 90
+        zoom: 9 // starting zoom
+    })
+}
+
+
