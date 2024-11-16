@@ -1,4 +1,4 @@
-.iframe-wrapper {
+/* .iframe-wrapper {
     position: relative;
     aspect-ratio: 16 / 6;
     filter: drop-shadow(0 0 4px rgb(0 0 0 / 50%));
@@ -9,7 +9,7 @@
         left: 0;
         clip-path: inset(0% 0% 0% 0% round 20px);
     }
-}
+} */
 
 #map {
     position: absolute; 
@@ -17,6 +17,14 @@
     bottom: 0; 
     width: 100%; 
     border-radius: 20px;
+}
+
+#geocoder {
+    z-index: 1;
+    margin: 20px;
+}
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
 }
 
 /* #tomorrow {
