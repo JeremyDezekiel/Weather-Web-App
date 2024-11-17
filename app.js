@@ -1,24 +1,96 @@
-function showGifWeather(code) {
+function showGifWeather(code, time) {
     if (code == 0) {
-        return '<img width="50px" src="gif/0.gif"/>'
+        return '<img src="weatherGif/0 day.gif"/>'
+    } else if (code == 0 && time == 'night') {
+        return '<img src="weatherGif/0 night.gif"/>'
     } else if (code == 1) {
-        return '<img width="50px" src="gif/1.gif"/>'
+        return '<img src="gif/weatherGif/1 day Mostly Clear.gif"/>'
+    } else if (code == 1 && time == 'night') {
+        return '<img src="gif/weatherGif/1 night Mostly Clear.gif"/>'
     } else if (code == 2) {
-        return '<img width="50px" src="gif/2.gif"/>'
+        return 
+    } else if (code == 2 && time == 'night') {
+        return
     } else if (code == 3) {
-        return '<img width="50px" src="gif/overcast.gif"/>'
+        return '<img src="weatherGif/3 Overcast day.gif"/>'
+    } else if (code == 3 && time == 'night') {
+        return '<img src="weatherGif/3 Overcast night.gif"/>'
     } else if (code == 45) {
-        return '<img width="50px" src="gif/45.gif"/>'
+        return '<img src="weatherGif/45 day fog.gif"/>'
+    } else if (code == 45 && time == 'night') {
+        return '<img src="weatherGif/45 night fog.gif"/>'
     } else if (code == 48) {
-        return '<img width="50px" src=""/>'
-    } else if (code == 51 || code == 53 || code == 55 || code == 80 || code == 81 || code == 82 || code == 61 || code == 63 || code == 65) {
-        return '<img width="50px" src="gif/51,53,55,80,81,82,61,63,65.gif"/>'
+        return '<img src="weatherGif/48 day icy fog.gif"/>'
+    } else if (code == 48 && time == 'night') {
+        return '<img src="weatherGif/48 night icy fog.gif"/>'
+    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82) {
+        return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
+    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 'night') {
+        return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
     } else if (code == 56 || code == 57 || code == 66 || code == 67) {
-        return '<img width="50px" src="gif/56,57,66,67.gif"/>'
-    } else if (code == 77 || code == 85 || code == 86 || code == 71 || code == 73 || code == 75) {
-        return '<img width="50px" src="gif/77,85,86,71,73,75.gif"/>'
-    } else if (code == 95 || code == 96 || code == 99) {
-        return '<img width="50px" src="gif/95,96,99.gif"/>'
+        return 
+    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 'night') {
+        return 
+    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86) {
+        return '<img src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
+    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 'night') {
+        return '<img src="weatherGif/71,73,75,77,85,86 night snow.gif"/>'
+    } else if (code == 95) {
+        return '<img src="weatherGif/95 day thunder.gif"/>'
+    } else if (code == 95 && time == 'night') {
+        return '<img src="weatherGif/95 night thunder.gif"/>'
+    } else if (code == 96 || code == 99) {
+        return '<img src="weatherGif/96,99 day thunder rain.gif"/>'
+    } else if (code == 96 || code == 99 && time == 'night') {
+        return '<img src="weatherGif/96,99 night thunder rain.gif"/>'
+    }
+}
+
+function showGifWeatherWeekly(code, time) {
+    if (code == 0) {
+        return '<img width="50px" src="weatherGif/0 day.gif"/>'
+    } else if (code == 0 && time == 'night') {
+        return '<img width="50px" src="weatherGif/0 night.gif"/>'
+    } else if (code == 1) {
+        return '<img width="50px" src="gif/weatherGif/1 day Mostly Clear.gif"/>'
+    } else if (code == 1 && time == 'night') {
+        return '<img width="50px" src="gif/weatherGif/1 night Mostly Clear.gif"/>'
+    } else if (code == 2) {
+        return 
+    } else if (code == 2 && time == 'night') {
+        return
+    } else if (code == 3) {
+        return '<img width="50px" src="weatherGif/3 Overcast day.gif"/>'
+    } else if (code == 3 && time == 'night') {
+        return '<img width="50px" src="weatherGif/3 Overcast night.gif"/>'
+    } else if (code == 45) {
+        return '<img width="50px" src="weatherGif/45 day fog.gif"/>'
+    } else if (code == 45 && time == 'night') {
+        return '<img width="50px" src="weatherGif/45 night fog.gif"/>'
+    } else if (code == 48) {
+        return '<img width="50px" src="weatherGif/48 day icy fog.gif"/>'
+    } else if (code == 48 && time == 'night') {
+        return '<img width="50px" src="weatherGif/48 night icy fog.gif"/>'
+    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82) {
+        return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
+    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 'night') {
+        return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
+    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
+        return 
+    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 'night') {
+        return 
+    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86) {
+        return '<img width="50px" src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
+    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 'night') {
+        return '<img width="50px" src="weatherGif/71,73,75,77,85,86 night snow.gif"/>'
+    } else if (code == 95) {
+        return '<img width="50px" src="weatherGif/95 day thunder.gif"/>'
+    } else if (code == 95 && time == 'night') {
+        return '<img width="50px" src="weatherGif/95 night thunder.gif"/>'
+    } else if (code == 96 || code == 99) {
+        return '<img width="50px" src="weatherGif/96,99 day thunder rain.gif"/>'
+    } else if (code == 96 || code == 99 && time == 'night') {
+        return '<img width="50px" src="weatherGif/96,99 night thunder rain.gif"/>'
     }
 }
 
@@ -107,7 +179,7 @@ async function getData(latitude, longitude) {
                             ${dataWeather.daily.wind_speed_10m_max[i]} Km/h
                         </span>
                         <span>
-                            ${showGifWeather(element)}
+                            ${showGifWeatherWeekly(element)}
                         <span>
                         <span>
                             ${dataWeather.daily.temperature_2m_max[i]}°C
@@ -215,7 +287,8 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
         let latitude = position.coords.latitude
         let longitude = position.coords.longitude
-        // document.getElementById('cityCurrent').innerText =
+        document.getElementById('cityCurrent').innerText = ''
+        document.getElementById('nameCity').innerText = ''
         getData(latitude, longitude)
         getAQI(latitude, longitude)
     })
@@ -223,168 +296,168 @@ function getLocation() {
 
 getLocation()
 
-// mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg';
 
-// const map = new mapboxgl.Map({
-//             container: 'map', // container ID
-//             center: [112.740746, -7.262669], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-//             style: 'mapbox://styles/mapbox/streets-v12',
-//             zoom: 3 // starting zoom
-// });
+const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            center: [112.740746, -7.262669], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+            style: 'mapbox://styles/mapbox/streets-v12',
+            zoom: 1 // starting zoom
+});
 
-// const coordinatesGeocoder = function (query) {
-//     // Match anything which looks like
-//     // decimal degrees coordinate pair.
-//     const matches = query.match(
-//         /^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
-//     );
-//     if (!matches) {
-//         return null;
-//     }
+const coordinatesGeocoder = function (query) {
+    // Match anything which looks like
+    // decimal degrees coordinate pair.
+    const matches = query.match(
+        /^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
+    );
+    if (!matches) {
+        return null;
+    }
 
-//     function coordinateFeature(lng, lat) {
-//         return {
-//             center: [lng, lat],
-//             geometry: {
-//                 type: 'Point',
-//                 coordinates: [lng, lat]
-//             },
-//             place_name: 'Lat: ' + lat + ' Lng: ' + lng,
-//             place_type: ['coordinate'],
-//             properties: {},
-//             type: 'Feature'
-//         };
-//     }
+    function coordinateFeature(lng, lat) {
+        return {
+            center: [lng, lat],
+            geometry: {
+                type: 'Point',
+                coordinates: [lng, lat]
+            },
+            place_name: 'Lat: ' + lat + ' Lng: ' + lng,
+            place_type: ['coordinate'],
+            properties: {},
+            type: 'Feature'
+        };
+    }
 
-//     const coord1 = Number(matches[1]);
-//     const coord2 = Number(matches[2]);
-//     const geocodes = [];
+    const coord1 = Number(matches[1]);
+    const coord2 = Number(matches[2]);
+    const geocodes = [];
 
-//     if (coord1 < -90 || coord1 > 90) {
-//         // must be lng, lat
-//         geocodes.push(coordinateFeature(coord1, coord2));
-//     }
+    if (coord1 < -90 || coord1 > 90) {
+        // must be lng, lat
+        geocodes.push(coordinateFeature(coord1, coord2));
+    }
 
-//     if (coord2 < -90 || coord2 > 90) {
-//         // must be lat, lng
-//         geocodes.push(coordinateFeature(coord2, coord1));
-//     }
+    if (coord2 < -90 || coord2 > 90) {
+        // must be lat, lng
+        geocodes.push(coordinateFeature(coord2, coord1));
+    }
 
-//     if (geocodes.length === 0) {
-//         // else could be either lng, lat or lat, lng
-//         geocodes.push(coordinateFeature(coord1, coord2));
-//         geocodes.push(coordinateFeature(coord2, coord1));
-//     }
+    if (geocodes.length === 0) {
+        // else could be either lng, lat or lat, lng
+        geocodes.push(coordinateFeature(coord1, coord2));
+        geocodes.push(coordinateFeature(coord2, coord1));
+    }
 
-//     return geocodes;
-// };
+    return geocodes;
+};
 
-// // Add the control to the map.
-// map.addControl(
-//     new MapboxGeocoder({
-//         accessToken: mapboxgl.accessToken,
-//         localGeocoder: coordinatesGeocoder,
-//         zoom: 4,
-//         placeholder: 'Search City',
-//         mapboxgl: mapboxgl,
-//         reverseGeocode: true
-//     })
+// Add the control to the map.
+map.addControl(
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        localGeocoder: coordinatesGeocoder,
+        zoom: 4,
+        placeholder: 'Search City',
+        mapboxgl: mapboxgl,
+        reverseGeocode: true
+    })
 
-// );
+);
 
-// map.on('load', () => {
-//             map.addSource('raster-array-source', {
-//                 'type': 'raster-array',
-//                 'url': 'mapbox://rasterarrayexamples.gfs-winds',
-//                 'tileSize': 512
-//             });
-//             map.addLayer({
-//                 'id': 'wind-layer',
-//                 'type': 'raster-particle',
-//                 'source': 'raster-array-source',
-//                 'source-layer': '10winds',
-//                 'paint': {
-//                     'raster-particle-speed-factor': 0.4,
-//                     'raster-particle-fade-opacity-factor': 0.9,
-//                     'raster-particle-reset-rate-factor': 0.4,
-//                     'raster-particle-count': 4000,
-//                     'raster-particle-max-speed': 40,
-//                     'raster-particle-color': [
-//                         'interpolate',
-//                         ['linear'],
-//                         ['raster-particle-speed'],
-//                         1.5,
-//                         'rgba(134,163,171,256)',
-//                         2.5,
-//                         'rgba(126,152,188,256)',
-//                         4.12,
-//                         'rgba(110,143,208,256)',
-//                         4.63,
-//                         'rgba(110,143,208,256)',
-//                         6.17,
-//                         'rgba(15,147,167,256)',
-//                         7.72,
-//                         'rgba(15,147,167,256)',
-//                         9.26,
-//                         'rgba(57,163,57,256)',
-//                         10.29,
-//                         'rgba(57,163,57,256)',
-//                         11.83,
-//                         'rgba(194,134,62,256)',
-//                         13.37,
-//                         'rgba(194,134,63,256)',
-//                         14.92,
-//                         'rgba(200,66,13,256)',
-//                         16.46,
-//                         'rgba(200,66,13,256)',
-//                         18.0,
-//                         'rgba(210,0,50,256)',
-//                         20.06,
-//                         'rgba(215,0,50,256)',
-//                         21.6,
-//                         'rgba(175,80,136,256)',
-//                         23.66,
-//                         'rgba(175,80,136,256)',
-//                         25.21,
-//                         'rgba(117,74,147,256)',
-//                         27.78,
-//                         'rgba(117,74,147,256)',
-//                         29.32,
-//                         'rgba(68,105,141,256)',
-//                         31.89,
-//                         'rgba(68,105,141,256)',
-//                         33.44,
-//                         'rgba(194,251,119,256)',
-//                         42.18,
-//                         'rgba(194,251,119,256)',
-//                         43.72,
-//                         'rgba(241,255,109,256)',
-//                         48.87,
-//                         'rgba(241,255,109,256)',
-//                         50.41,
-//                         'rgba(256,256,256,256)',
-//                         57.61,
-//                         'rgba(256,256,256,256)',
-//                         59.16,
-//                         'rgba(0,256,256,256)',
-//                         68.93,
-//                         'rgba(0,256,256,256)',
-//                         69.44,
-//                         'rgba(256,37,256,256)'
-//                     ]
-//                 }
-//             });
-//         });
-// // Add geolocate control to the map.
-// map.addControl(
-//     new mapboxgl.GeolocateControl({
-//         positionOptions: {
-//             enableHighAccuracy: true
-//         },
-//         // When active the map will receive updates to the device's location as it changes.
-//         trackUserLocation: true,
-//         // Draw an arrow next to the location dot to indicate which direction the device is heading.
-//         showUserHeading: true
-//     })
-// )
-// map.addControl(new mapboxgl.NavigationControl());
+map.on('load', () => {
+            map.addSource('raster-array-source', {
+                'type': 'raster-array',
+                'url': 'mapbox://rasterarrayexamples.gfs-winds',
+                'tileSize': 512
+            });
+            map.addLayer({
+                'id': 'wind-layer',
+                'type': 'raster-particle',
+                'source': 'raster-array-source',
+                'source-layer': '10winds',
+                'paint': {
+                    'raster-particle-speed-factor': 0.4,
+                    'raster-particle-fade-opacity-factor': 0.9,
+                    'raster-particle-reset-rate-factor': 0.4,
+                    'raster-particle-count': 4000,
+                    'raster-particle-max-speed': 40,
+                    'raster-particle-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['raster-particle-speed'],
+                        1.5,
+                        'rgba(134,163,171,256)',
+                        2.5,
+                        'rgba(126,152,188,256)',
+                        4.12,
+                        'rgba(110,143,208,256)',
+                        4.63,
+                        'rgba(110,143,208,256)',
+                        6.17,
+                        'rgba(15,147,167,256)',
+                        7.72,
+                        'rgba(15,147,167,256)',
+                        9.26,
+                        'rgba(57,163,57,256)',
+                        10.29,
+                        'rgba(57,163,57,256)',
+                        11.83,
+                        'rgba(194,134,62,256)',
+                        13.37,
+                        'rgba(194,134,63,256)',
+                        14.92,
+                        'rgba(200,66,13,256)',
+                        16.46,
+                        'rgba(200,66,13,256)',
+                        18.0,
+                        'rgba(210,0,50,256)',
+                        20.06,
+                        'rgba(215,0,50,256)',
+                        21.6,
+                        'rgba(175,80,136,256)',
+                        23.66,
+                        'rgba(175,80,136,256)',
+                        25.21,
+                        'rgba(117,74,147,256)',
+                        27.78,
+                        'rgba(117,74,147,256)',
+                        29.32,
+                        'rgba(68,105,141,256)',
+                        31.89,
+                        'rgba(68,105,141,256)',
+                        33.44,
+                        'rgba(194,251,119,256)',
+                        42.18,
+                        'rgba(194,251,119,256)',
+                        43.72,
+                        'rgba(241,255,109,256)',
+                        48.87,
+                        'rgba(241,255,109,256)',
+                        50.41,
+                        'rgba(256,256,256,256)',
+                        57.61,
+                        'rgba(256,256,256,256)',
+                        59.16,
+                        'rgba(0,256,256,256)',
+                        68.93,
+                        'rgba(0,256,256,256)',
+                        69.44,
+                        'rgba(256,37,256,256)'
+                    ]
+                }
+            });
+        });
+// Add geolocate control to the map.
+map.addControl(
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true
+    })
+)
+map.addControl(new mapboxgl.NavigationControl());
