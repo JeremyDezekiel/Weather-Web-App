@@ -13,7 +13,7 @@ function showGifWeather(code, time) {
         return '<img src="weatherGif/2 night partly cloudy.gif"/>'
     } else if (code == 3 && time == 1) {
         return '<img src="weatherGif/3 Overcast day.gif"/>'
-    } else if (code == 3 && time ==0) {
+    } else if (code == 3 && time == 0) {
         return '<img src="weatherGif/3 Overcast night.gif"/>'
     } else if (code == 45 && time == 1) {
         return '<img src="weatherGif/45 day fog.gif"/>'
@@ -23,15 +23,15 @@ function showGifWeather(code, time) {
         return '<img src="weatherGif/48 day icy fog.gif"/>'
     } else if (code == 48 && time == 0) {
         return '<img src="weatherGif/48 night icy fog.gif"/>'
-    } else if (code == 51 && time == 1 || code == 53 && time == 1 || code == 55 && time == 1 ||  code == 61 && time == 1 || code == 63 && time == 1 || code == 65 && time == 1 ||code == 80 && time == 1 || code == 81 && time == 1 || code == 82 && time == 1) {
+    } else if (code == 51 && time == 1 || code == 53 && time == 1 || code == 55 && time == 1 || code == 61 && time == 1 || code == 63 && time == 1 || code == 65 && time == 1 || code == 80 && time == 1 || code == 81 && time == 1 || code == 82 && time == 1) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
-    } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 ||  code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 ||code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
+    } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 || code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 || code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
     } else if (code == 56 && time == 1 || code == 57 && time == 1 || code == 66 && time == 1 || code == 67 && time == 1) {
         return '<img width="50px" src="weatherGif/56,57,66,67 day Freezing Rain.gif"/>'
     } else if (code == 56 && time == 0 || code == 57 && time == 0 || code == 66 && time == 0 || code == 67 && time == 0) {
         return '<img width="50px" src="weatherGif/56,57,66,67 night Freezing Rain.gif"/>'
-    } else if (code == 71 && time == 1 || code == 73 && time == 1 || code == 75 && time == 1 || code == 77 && time == 1|| code == 85 && time == 1 || code == 86 && time == 1) {
+    } else if (code == 71 && time == 1 || code == 73 && time == 1 || code == 75 && time == 1 || code == 77 && time == 1 || code == 85 && time == 1 || code == 86 && time == 1) {
         return '<img src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
     } else if (code == 71 && time == 0 || code == 73 && time == 0 || code == 75 && time == 0 || code == 77 && time == 0 || code == 85 && time == 0 || code == 86 && time == 0) {
         return '<img src="weatherGif/71,73,75,77,85,86 night snow.gif"/>'
@@ -71,9 +71,9 @@ function showGifWeatherWeekly(code, time) {
         return '<img width="50px" src="weatherGif/48 day icy fog.gif"/>'
     } else if (code == 48 && time == 0) {
         return '<img width="50px" src="weatherGif/48 night icy fog.gif"/>'
-    } else if (code == 51 && time == 1 || code == 53 && time == 1 || code == 55 && time == 1 ||  code == 61 && time == 1 || code == 63 && time == 1 || code == 65 && time == 1 ||code == 80 && time == 1 || code == 81 && time == 1 || code == 82 && time == 1) {
+    } else if (code == 51 && time == 1 || code == 53 && time == 1 || code == 55 && time == 1 || code == 61 && time == 1 || code == 63 && time == 1 || code == 65 && time == 1 || code == 80 && time == 1 || code == 81 && time == 1 || code == 82 && time == 1) {
         return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
-    } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 ||  code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 ||code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
+    } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 || code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 || code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
         return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
     } else if (code == 56 && time == 1 || code == 57 && time == 1 || code == 66 && time == 1 || code == 67 && time == 1) {
         return '<img width="50px" src="weatherGif/56,57,66,67 day Freezing Rain.gif"/>'
@@ -162,8 +162,8 @@ function bgImage(code) {
 
         element.style.backgroundImage = "url('bg-tomorrow/Rain.gif')"
         element.style.backgroundRepeat = 'no-repeat'
-        element.style.backgroundPosition = 'center'
-        element.style.backgroundSize = '55%'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '70%'
     }
 }
 
@@ -171,7 +171,7 @@ async function getData(latitude, longitude) {
     try {
         document.getElementById('loader').style.display = 'block'
 
-        const URL =  `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m&hourly=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&timezone=Asia%2FSingapore`
+        const URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m&hourly=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&timezone=Asia%2FSingapore`
         const fetchData = await fetch(URL)
         const dataWeather = await fetchData.json()
 
@@ -250,7 +250,7 @@ async function getData(latitude, longitude) {
 
 async function getAQI(latitude, longitude) {
     try {
-    document.getElementById('loader').style.display = 'block'
+        document.getElementById('loader').style.display = 'block'
 
         const AQI = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${latitude}&longitude=${longitude}&current=pm2_5&forecast_days=1`
         const fetchAir = await fetch(AQI)
@@ -287,21 +287,134 @@ async function getAQI(latitude, longitude) {
     }
 }
 
+function setupMapbox(latitude, longitude) {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        center: [longitude, latitude], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+        zoom: 10 // starting zoom
+    });
+
+    map.on('load', () => {
+        map.addSource('raster-array-source', {
+            'type': 'raster-array',
+            'url': 'mapbox://rasterarrayexamples.gfs-winds',
+            'tileSize': 512
+        })
+        map.addLayer({
+            'id': 'wind-layer',
+            'type': 'raster-particle',
+            'source': 'raster-array-source',
+            'source-layer': '10winds',
+            'paint': {
+                'raster-particle-speed-factor': 0.4,
+                'raster-particle-fade-opacity-factor': 0.9,
+                'raster-particle-reset-rate-factor': 0.4,
+                'raster-particle-count': 4000,
+                'raster-particle-max-speed': 40,
+                'raster-particle-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['raster-particle-speed'],
+                    1.5,
+                    'rgba(134,163,171,256)',
+                    2.5,
+                    'rgba(126,152,188,256)',
+                    4.12,
+                    'rgba(110,143,208,256)',
+                    4.63,
+                    'rgba(110,143,208,256)',
+                    6.17,
+                    'rgba(15,147,167,256)',
+                    7.72,
+                    'rgba(15,147,167,256)',
+                    9.26,
+                    'rgba(57,163,57,256)',
+                    10.29,
+                    'rgba(57,163,57,256)',
+                    11.83,
+                    'rgba(194,134,62,256)',
+                    13.37,
+                    'rgba(194,134,63,256)',
+                    14.92,
+                    'rgba(200,66,13,256)',
+                    16.46,
+                    'rgba(200,66,13,256)',
+                    18.0,
+                    'rgba(210,0,50,256)',
+                    20.06,
+                    'rgba(215,0,50,256)',
+                    21.6,
+                    'rgba(175,80,136,256)',
+                    23.66,
+                    'rgba(175,80,136,256)',
+                    25.21,
+                    'rgba(117,74,147,256)',
+                    27.78,
+                    'rgba(117,74,147,256)',
+                    29.32,
+                    'rgba(68,105,141,256)',
+                    31.89,
+                    'rgba(68,105,141,256)',
+                    33.44,
+                    'rgba(194,251,119,256)',
+                    42.18,
+                    'rgba(194,251,119,256)',
+                    43.72,
+                    'rgba(241,255,109,256)',
+                    48.87,
+                    'rgba(241,255,109,256)',
+                    50.41,
+                    'rgba(256,256,256,256)',
+                    57.61,
+                    'rgba(256,256,256,256)',
+                    59.16,
+                    'rgba(0,256,256,256)',
+                    68.93,
+                    'rgba(0,256,256,256)',
+                    69.44,
+                    'rgba(256,37,256,256)'
+                ]
+            }
+        })
+    })
+
+    // Add geolocate control to the map.
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            // When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        })
+    )
+    map.addControl(new mapboxgl.NavigationControl())
+}
+
 async function getGeocoding() {
     try {
-    document.getElementById('loader').style.display = 'block'
+        document.getElementById('loader').style.display = 'block'
 
         let cityName = document.getElementById('city-name').value
         document.getElementById('cityCurrent').innerText = cityName
+
         document.getElementById('nameCity').innerText = cityName
         document.getElementById('city-name').value = ''
 
-        const fetchCoordinate = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}&count=1&language=en&format=json`)
+        const apiOpenWeather = 'aae2f828e9ad70416fd94dd4a0bfd518'
+        const fetchCoordinate = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiOpenWeather}`)
         const dataCoordinate = await fetchCoordinate.json()
-        let latitude = dataCoordinate.results[0].latitude
-        let longitude = dataCoordinate.results[0].longitude
+        console.log(dataCoordinate)
+        let latitude = dataCoordinate[0].lat
+        console.log(latitude)
+        let longitude = dataCoordinate[0].lon
+
         getData(latitude, longitude)
         getAQI(latitude, longitude)
+        setupMapbox(latitude, longitude)
 
     } catch (error) {
         console.log(error)
@@ -314,8 +427,8 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
         let latitude = position.coords.latitude
         let longitude = position.coords.longitude
-        document.getElementById('cityCurrent').innerText = 'City Now'
-        document.getElementById('nameCity').innerText = ''
+        document.getElementById('cityCurrent').innerText = 'Surabaya, Indonesia'
+        document.getElementById('nameCity').innerText = 'Surabaya, Indonesia'
         getData(latitude, longitude)
         getAQI(latitude, longitude)
     })
@@ -326,13 +439,14 @@ getLocation()
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg'
 
 const map = new mapboxgl.Map({
-            container: 'map', // container ID
-            center: [112.740746, -7.262669], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-            style: 'mapbox://styles/mapbox/streets-v12',
-            zoom: 1 // starting zoom
+    container: 'map', // container ID
+    center: [112.740746, -7.262669], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+    style: 'mapbox://styles/mapbox/streets-v12',
+    zoom: 1 // starting zoom
 })
 
 const coordinatesGeocoder = function (query) {
+    getGeocoding()
     // Match anything which looks like
     // decimal degrees coordinate pair.
     const matches = query.match(
@@ -379,111 +493,86 @@ const coordinatesGeocoder = function (query) {
     return geocodes
 }
 
-// Add the control to the map.
-map.addControl(
-    new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        localGeocoder: coordinatesGeocoder,
-        placeholder: 'Search City',
-        mapboxgl: mapboxgl,
-        reverseGeocode: true
-    })
-
-)
-
 map.on('load', () => {
-            map.addSource('raster-array-source', {
-                'type': 'raster-array',
-                'url': 'mapbox://rasterarrayexamples.gfs-winds',
-                'tileSize': 512
-            })
-            map.addLayer({
-                'id': 'wind-layer',
-                'type': 'raster-particle',
-                'source': 'raster-array-source',
-                'source-layer': '10winds',
-                'paint': {
-                    'raster-particle-speed-factor': 0.4,
-                    'raster-particle-fade-opacity-factor': 0.9,
-                    'raster-particle-reset-rate-factor': 0.4,
-                    'raster-particle-count': 4000,
-                    'raster-particle-max-speed': 40,
-                    'raster-particle-color': [
-                        'interpolate',
-                        ['linear'],
-                        ['raster-particle-speed'],
-                        1.5,
-                        'rgba(134,163,171,256)',
-                        2.5,
-                        'rgba(126,152,188,256)',
-                        4.12,
-                        'rgba(110,143,208,256)',
-                        4.63,
-                        'rgba(110,143,208,256)',
-                        6.17,
-                        'rgba(15,147,167,256)',
-                        7.72,
-                        'rgba(15,147,167,256)',
-                        9.26,
-                        'rgba(57,163,57,256)',
-                        10.29,
-                        'rgba(57,163,57,256)',
-                        11.83,
-                        'rgba(194,134,62,256)',
-                        13.37,
-                        'rgba(194,134,63,256)',
-                        14.92,
-                        'rgba(200,66,13,256)',
-                        16.46,
-                        'rgba(200,66,13,256)',
-                        18.0,
-                        'rgba(210,0,50,256)',
-                        20.06,
-                        'rgba(215,0,50,256)',
-                        21.6,
-                        'rgba(175,80,136,256)',
-                        23.66,
-                        'rgba(175,80,136,256)',
-                        25.21,
-                        'rgba(117,74,147,256)',
-                        27.78,
-                        'rgba(117,74,147,256)',
-                        29.32,
-                        'rgba(68,105,141,256)',
-                        31.89,
-                        'rgba(68,105,141,256)',
-                        33.44,
-                        'rgba(194,251,119,256)',
-                        42.18,
-                        'rgba(194,251,119,256)',
-                        43.72,
-                        'rgba(241,255,109,256)',
-                        48.87,
-                        'rgba(241,255,109,256)',
-                        50.41,
-                        'rgba(256,256,256,256)',
-                        57.61,
-                        'rgba(256,256,256,256)',
-                        59.16,
-                        'rgba(0,256,256,256)',
-                        68.93,
-                        'rgba(0,256,256,256)',
-                        69.44,
-                        'rgba(256,37,256,256)'
-                    ]
-                }
-            })
-        })
-// Add geolocate control to the map.
-map.addControl(
-    new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        // When active the map will receive updates to the device's location as it changes.
-        trackUserLocation: true,
-        // Draw an arrow next to the location dot to indicate which direction the device is heading.
-        showUserHeading: true
+    map.addSource('raster-array-source', {
+        'type': 'raster-array',
+        'url': 'mapbox://rasterarrayexamples.gfs-winds',
+        'tileSize': 512
     })
-)
-map.addControl(new mapboxgl.NavigationControl())
+    map.addLayer({
+        'id': 'wind-layer',
+        'type': 'raster-particle',
+        'source': 'raster-array-source',
+        'source-layer': '10winds',
+        'paint': {
+            'raster-particle-speed-factor': 0.4,
+            'raster-particle-fade-opacity-factor': 0.9,
+            'raster-particle-reset-rate-factor': 0.4,
+            'raster-particle-count': 4000,
+            'raster-particle-max-speed': 40,
+            'raster-particle-color': [
+                'interpolate',
+                ['linear'],
+                ['raster-particle-speed'],
+                1.5,
+                'rgba(134,163,171,256)',
+                2.5,
+                'rgba(126,152,188,256)',
+                4.12,
+                'rgba(110,143,208,256)',
+                4.63,
+                'rgba(110,143,208,256)',
+                6.17,
+                'rgba(15,147,167,256)',
+                7.72,
+                'rgba(15,147,167,256)',
+                9.26,
+                'rgba(57,163,57,256)',
+                10.29,
+                'rgba(57,163,57,256)',
+                11.83,
+                'rgba(194,134,62,256)',
+                13.37,
+                'rgba(194,134,63,256)',
+                14.92,
+                'rgba(200,66,13,256)',
+                16.46,
+                'rgba(200,66,13,256)',
+                18.0,
+                'rgba(210,0,50,256)',
+                20.06,
+                'rgba(215,0,50,256)',
+                21.6,
+                'rgba(175,80,136,256)',
+                23.66,
+                'rgba(175,80,136,256)',
+                25.21,
+                'rgba(117,74,147,256)',
+                27.78,
+                'rgba(117,74,147,256)',
+                29.32,
+                'rgba(68,105,141,256)',
+                31.89,
+                'rgba(68,105,141,256)',
+                33.44,
+                'rgba(194,251,119,256)',
+                42.18,
+                'rgba(194,251,119,256)',
+                43.72,
+                'rgba(241,255,109,256)',
+                48.87,
+                'rgba(241,255,109,256)',
+                50.41,
+                'rgba(256,256,256,256)',
+                57.61,
+                'rgba(256,256,256,256)',
+                59.16,
+                'rgba(0,256,256,256)',
+                68.93,
+                'rgba(0,256,256,256)',
+                69.44,
+                'rgba(256,37,256,256)'
+            ]
+        }
+    })
+})
