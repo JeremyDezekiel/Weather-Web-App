@@ -23,25 +23,25 @@ function showGifWeather(code, time) {
         return '<img src="weatherGif/48 day icy fog.gif"/>'
     } else if (code == 48 && time == 0) {
         return '<img src="weatherGif/48 night icy fog.gif"/>'
-    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 1) {
+    } else if (code == 51 && time == 1 || code == 53 && time == 1 || code == 55 && time == 1 ||  code == 61 && time == 1 || code == 63 && time == 1 || code == 65 && time == 1 ||code == 80 && time == 1 || code == 81 && time == 1 || code == 82 && time == 1) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
-    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 0) {
+    } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 ||  code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 ||code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
-    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 1) {
+    } else if (code == 56 && time == 1 || code == 57 && time == 1 || code == 66 && time == 1 || code == 67 && time == 1) {
         return '<img width="50px" src="weatherGif/56,57,66,67 day Freezing Rain.gif"/>'
-    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 0) {
+    } else if (code == 56 && time == 0 || code == 57 && time == 0 || code == 66 && time == 0 || code == 67 && time == 0) {
         return '<img width="50px" src="weatherGif/56,57,66,67 night Freezing Rain.gif"/>'
-    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 1) {
+    } else if (code == 71 && time == 1 || code == 73 && time == 1 || code == 75 && time == 1 || code == 77 && time == 1|| code == 85 && time == 1 || code == 86 && time == 1) {
         return '<img src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
-    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 0) {
+    } else if (code == 71 && time == 0 || code == 73 && time == 0 || code == 75 && time == 0 || code == 77 && time == 0 || code == 85 && time == 0 || code == 86 && time == 0) {
         return '<img src="weatherGif/71,73,75,77,85,86 night snow.gif"/>'
     } else if (code == 95 && time == 1) {
         return '<img src="weatherGif/95 day thunder.gif"/>'
     } else if (code == 95 && time == 0) {
         return '<img src="weatherGif/95 night thunder.gif"/>'
-    } else if (code == 96 || code == 99 && time == 1) {
+    } else if (code == 96 && time == 1 || code == 99 && time == 1) {
         return '<img src="weatherGif/96,99 day thunder rain.gif"/>'
-    } else if (code == 96 || code == 99 && time == 0) {
+    } else if (code == 96 && time == 0 || code == 99 && time == 0) {
         return '<img src="weatherGif/96,99 night thunder rain.gif"/>'
     }
 }
