@@ -4,13 +4,13 @@ function showGifWeather(code, time) {
     } else if (code == 0 && time == 0) {
         return '<img src="weatherGif/0 night.gif"/>'
     } else if (code == 1 && time == 1) {
-        return '<img src="gif/weatherGif/1 day Mostly Clear.gif"/>'
+        return '<img src="weatherGif/1 day Mostly Clear.gif"/>'
     } else if (code == 1 && time == 0) {
-        return '<img src="gif/weatherGif/1 night Mostly Clear.gif"/>'
+        return '<img src="weatherGif/1 night Mostly Clear.gif"/>'
     } else if (code == 2 && time == 1) {
-        return 
+        return '<img src="weatherGif/2 day partly cloudy.gif"/>'
     } else if (code == 2 && time == 0) {
-        return
+        return '<img src="weatherGif/2 night partly cloudy.gif"/>'
     } else if (code == 3 && time == 1) {
         return '<img src="weatherGif/3 Overcast day.gif"/>'
     } else if (code == 3 && time ==0) {
@@ -28,9 +28,9 @@ function showGifWeather(code, time) {
     } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 0) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
     } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 1) {
-        return 
+        return '<img width="50px" src="weatherGif/56,57,66,67 day Freezing Rain.gif"/>'
     } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 0) {
-        return 
+        return '<img width="50px" src="weatherGif/56,57,66,67 night Freezing Rain.gif"/>'
     } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 1) {
         return '<img src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
     } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 0) {
@@ -52,13 +52,13 @@ function showGifWeatherWeekly(code, time) {
     } else if (code == 0 && time == 0) {
         return '<img width="50px" src="weatherGif/0 night.gif"/>'
     } else if (code == 1 && time == 1) {
-        return '<img width="50px" src="gif/weatherGif/1 day Mostly Clear.gif"/>'
+        return '<img width="50px" src="weatherGif/1 day Mostly Clear.gif"/>'
     } else if (code == 1 && time == 0) {
-        return '<img width="50px" src="gif/weatherGif/1 night Mostly Clear.gif"/>'
+        return '<img width="50px" src="weatherGif/1 night Mostly Clear.gif"/>'
     } else if (code == 2 && time == 1) {
-        return 
+        return '<img width="50px" src="weatherGif/2 day partly cloudy.gif"/>'
     } else if (code == 2 && time == 0) {
-        return
+        return '<img width="50px" src="weatherGif/2 night partly cloudy.gif"/>'
     } else if (code == 3 && time == 1) {
         return '<img width="50px" src="weatherGif/3 Overcast day.gif"/>'
     } else if (code == 3 && time == 0) {
@@ -76,9 +76,9 @@ function showGifWeatherWeekly(code, time) {
     } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 ||  code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 ||code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
         return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
     } else if (code == 56 && time == 1 || code == 57 && time == 1 || code == 66 && time == 1 || code == 67 && time == 1) {
-        return 
+        return '<img width="50px" src="weatherGif/56,57,66,67 day Freezing Rain.gif"/>'
     } else if (code == 56 && time == 0 || code == 57 && time == 0 || code == 66 && time == 0 || code == 67 && time == 0) {
-        return 
+        return '<img width="50px" src="weatherGif/56,57,66,67 night Freezing Rain.gif"/>'
     } else if (code == 71 && time == 1 || code == 73 && time == 1 || code == 75 && time == 1 || code == 77 && time == 1 || code == 85 && time == 1 || code == 86 && time == 1) {
         return '<img width="50px" src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
     } else if (code == 71 && time == 0 || code == 73 && time == 0 || code == 75 && time == 0 || code == 77 && time == 0 || code == 85 && time == 0 || code == 86 && time == 0) {
@@ -136,12 +136,36 @@ function formatTime(time) {
     const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0')
     const seconds = String(time % 60).padStart(2, '0')
     return `${hours}:${minutes}:${seconds}`
-    // return `${hours}:${minutes}`
 }
 
 setInterval(() => {
-    document.getElementById('time').textContent = formatTime(unixTime++);
+    document.getElementById('time').textContent = formatTime(unixTime++)
 }, 1000)
+
+function bgImage(code) {
+    if (code == 0 || code == 1 || code == 2 || code == 3 || code == 45 || code == 48) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/0,1,2.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '55%'
+    } else if (code == 51 || code == 53 || code == 55 || code == 61 || code == 63 || code == 65 || code == 80 || code == 81 || code == 82) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('test.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'center'
+        element.style.backgroundSize = '55%'
+    } else if (code == 95 || code == 96 || code == 99) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/Rain.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'center'
+        element.style.backgroundSize = '55%'
+    }
+}
 
 async function getData(latitude, longitude) {
     try {
@@ -179,15 +203,11 @@ async function getData(latitude, longitude) {
                         <span>${formattedDate(dataWeather.daily.time[i])}</span>
                     </div>
                     <div>
-
                         <span>
                             ${dataWeather.daily.wind_speed_10m_max[i]} Km/h
                         </span>
                         <span>
                             ${showGifWeatherWeekly(element, day)}
-                        <span>
-                            ${showGifWeatherWeekly(element, night)}
-                        <span>
                         <span>
                             ${dataWeather.daily.temperature_2m_max[i]}°C
                         </span>
@@ -197,6 +217,8 @@ async function getData(latitude, longitude) {
                     </div>
                 </div>
             `
+            document.getElementById('tomorrow').style.backgroundImage =
+                bgImage(dataWeather.daily.weather_code[1])
             document.getElementById('temperatureTomorrow').innerHTML =
                 dataWeather.daily.temperature_2m_min[1] + '°C'
             document.getElementById('weatherTomorrow').innerHTML =
@@ -215,7 +237,7 @@ async function getData(latitude, longitude) {
                     showGifWeatherWeekly(dataWeather.hourly.weather_code[18], night)
                 document.getElementById('temperatureAfternoon').innerText =
                     dataWeather.hourly.temperature_2m[18] + '°'
-                document.getElementById('night').innerHTMLt =
+                document.getElementById('night').innerHTML =
                     showGifWeatherWeekly(dataWeather.hourly.weather_code[22], night)
                 document.getElementById('temperatureNight').innerText =
                     dataWeather.hourly.temperature_2m[22] + '°'
@@ -303,23 +325,23 @@ function getLocation() {
 
 getLocation()
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg'
 
 const map = new mapboxgl.Map({
             container: 'map', // container ID
             center: [112.740746, -7.262669], // starting position [lng, lat]. Note that lat must be set between -90 and 90
             style: 'mapbox://styles/mapbox/streets-v12',
             zoom: 1 // starting zoom
-});
+})
 
 const coordinatesGeocoder = function (query) {
     // Match anything which looks like
     // decimal degrees coordinate pair.
     const matches = query.match(
         /^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
-    );
+    )
     if (!matches) {
-        return null;
+        return null
     }
 
     function coordinateFeature(lng, lat) {
@@ -333,31 +355,31 @@ const coordinatesGeocoder = function (query) {
             place_type: ['coordinate'],
             properties: {},
             type: 'Feature'
-        };
+        }
     }
 
-    const coord1 = Number(matches[1]);
-    const coord2 = Number(matches[2]);
-    const geocodes = [];
+    const coord1 = Number(matches[1])
+    const coord2 = Number(matches[2])
+    const geocodes = []
 
     if (coord1 < -90 || coord1 > 90) {
         // must be lng, lat
-        geocodes.push(coordinateFeature(coord1, coord2));
+        geocodes.push(coordinateFeature(coord1, coord2))
     }
 
     if (coord2 < -90 || coord2 > 90) {
         // must be lat, lng
-        geocodes.push(coordinateFeature(coord2, coord1));
+        geocodes.push(coordinateFeature(coord2, coord1))
     }
 
     if (geocodes.length === 0) {
         // else could be either lng, lat or lat, lng
-        geocodes.push(coordinateFeature(coord1, coord2));
-        geocodes.push(coordinateFeature(coord2, coord1));
+        geocodes.push(coordinateFeature(coord1, coord2))
+        geocodes.push(coordinateFeature(coord2, coord1))
     }
 
-    return geocodes;
-};
+    return geocodes
+}
 
 // Add the control to the map.
 map.addControl(
@@ -369,14 +391,14 @@ map.addControl(
         reverseGeocode: true
     })
 
-);
+)
 
 map.on('load', () => {
             map.addSource('raster-array-source', {
                 'type': 'raster-array',
                 'url': 'mapbox://rasterarrayexamples.gfs-winds',
                 'tileSize': 512
-            });
+            })
             map.addLayer({
                 'id': 'wind-layer',
                 'type': 'raster-particle',
@@ -452,8 +474,8 @@ map.on('load', () => {
                         'rgba(256,37,256,256)'
                     ]
                 }
-            });
-        });
+            })
+        })
 // Add geolocate control to the map.
 map.addControl(
     new mapboxgl.GeolocateControl({
@@ -466,4 +488,4 @@ map.addControl(
         showUserHeading: true
     })
 )
-map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new mapboxgl.NavigationControl())
