@@ -1,6 +1,6 @@
 function showGifWeather(code, time) {
     if (code == 0 && time == 1) {
-        return '<img src="weatherGif/0 day.gif"/>'
+        return '<img src="weatherGif/0 clear.gif"/>'
     } else if (code == 0 && time == 0) {
         return '<img src="weatherGif/0 night.gif"/>'
     } else if (code == 1 && time == 1) {
@@ -48,7 +48,7 @@ function showGifWeather(code, time) {
 
 function showGifWeatherWeekly(code, time) {
     if (code == 0 && time == 1) {
-        return '<img width="50px" src="weatherGif/0 day.gif"/>'
+        return '<img width="50px" src="weatherGif/0 clear.gif"/>'
     } else if (code == 0 && time == 0) {
         return '<img width="50px" src="weatherGif/0 night.gif"/>'
     } else if (code == 1 && time == 1) {
@@ -176,8 +176,6 @@ async function getData(latitude, longitude) {
         const dataWeather = await fetchData.json()
 
         const dayOrNight = dataWeather.current.is_day
-        const day = (dayOrNight == 1)
-        const night = (dayOrNight == 0)
         const codeWeather = dataWeather.current.weather_code
 
         document.getElementById('currentWeather').innerText =
@@ -207,7 +205,7 @@ async function getData(latitude, longitude) {
                             ${dataWeather.daily.wind_speed_10m_max[i]} Km/h
                         </span>
                         <span>
-                            ${showGifWeatherWeekly(element, day)}
+                            ${showGifWeatherWeekly(element, 1)}
                         <span>
                             ${dataWeather.daily.temperature_2m_max[i]}°C
                         </span>
@@ -226,19 +224,19 @@ async function getData(latitude, longitude) {
 
             dataWeather.hourly.time.forEach((element, i) => {
                 document.getElementById('morning').innerHTML =
-                    showGifWeatherWeekly(dataWeather.hourly.weather_code[6], day)
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[6], 1)
                 document.getElementById('temperatureMorning').innerText =
                     dataWeather.hourly.temperature_2m[6] + '°'
                 document.getElementById('noon').innerHTML =
-                    showGifWeatherWeekly(dataWeather.hourly.weather_code[12], day)
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[12], 1)
                 document.getElementById('temperatureNoon').innerText =
                     dataWeather.hourly.temperature_2m[12] + '°'
                 document.getElementById('afternoon').innerHTML =
-                    showGifWeatherWeekly(dataWeather.hourly.weather_code[18], night)
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[18], 0)
                 document.getElementById('temperatureAfternoon').innerText =
                     dataWeather.hourly.temperature_2m[18] + '°'
                 document.getElementById('night').innerHTML =
-                    showGifWeatherWeekly(dataWeather.hourly.weather_code[22], night)
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[22], 0)
                 document.getElementById('temperatureNight').innerText =
                     dataWeather.hourly.temperature_2m[22] + '°'
             })
