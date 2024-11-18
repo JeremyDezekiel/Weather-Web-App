@@ -1,16 +1,3 @@
-/* .iframe-wrapper {
-    position: relative;
-    aspect-ratio: 16 / 6;
-    filter: drop-shadow(0 0 4px rgb(0 0 0 / 50%));
-
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        clip-path: inset(0% 0% 0% 0% round 20px);
-    }
-} */
-
 #map {
     position: absolute; 
     top: 0; 
@@ -26,6 +13,14 @@
     min-width: 100%;
 }
 
+body {
+    font-family: "Fredoka", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
 /* body {
     background-image: url(bg-morning.png);
 } */

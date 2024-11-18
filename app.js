@@ -1,95 +1,95 @@
 function showGifWeather(code, time) {
-    if (code == 0) {
+    if (code == 0 && time == 1) {
         return '<img src="weatherGif/0 day.gif"/>'
-    } else if (code == 0 && time == 'night') {
+    } else if (code == 0 && time == 0) {
         return '<img src="weatherGif/0 night.gif"/>'
-    } else if (code == 1) {
+    } else if (code == 1 && time == 1) {
         return '<img src="gif/weatherGif/1 day Mostly Clear.gif"/>'
-    } else if (code == 1 && time == 'night') {
+    } else if (code == 1 && time == 0) {
         return '<img src="gif/weatherGif/1 night Mostly Clear.gif"/>'
-    } else if (code == 2) {
+    } else if (code == 2 && time == 1) {
         return 
-    } else if (code == 2 && time == 'night') {
+    } else if (code == 2 && time == 0) {
         return
-    } else if (code == 3) {
+    } else if (code == 3 && time == 1) {
         return '<img src="weatherGif/3 Overcast day.gif"/>'
-    } else if (code == 3 && time == 'night') {
+    } else if (code == 3 && time ==0) {
         return '<img src="weatherGif/3 Overcast night.gif"/>'
-    } else if (code == 45) {
+    } else if (code == 45 && time == 1) {
         return '<img src="weatherGif/45 day fog.gif"/>'
-    } else if (code == 45 && time == 'night') {
+    } else if (code == 45 && time == 0) {
         return '<img src="weatherGif/45 night fog.gif"/>'
-    } else if (code == 48) {
+    } else if (code == 48 && time == 1) {
         return '<img src="weatherGif/48 day icy fog.gif"/>'
-    } else if (code == 48 && time == 'night') {
+    } else if (code == 48 && time == 0) {
         return '<img src="weatherGif/48 night icy fog.gif"/>'
-    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82) {
+    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 1) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
-    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 'night') {
+    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 0) {
         return '<img src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
-    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
+    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 1) {
         return 
-    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 'night') {
+    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 0) {
         return 
-    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86) {
+    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 1) {
         return '<img src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
-    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 'night') {
+    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 0) {
         return '<img src="weatherGif/71,73,75,77,85,86 night snow.gif"/>'
-    } else if (code == 95) {
+    } else if (code == 95 && time == 1) {
         return '<img src="weatherGif/95 day thunder.gif"/>'
-    } else if (code == 95 && time == 'night') {
+    } else if (code == 95 && time == 0) {
         return '<img src="weatherGif/95 night thunder.gif"/>'
-    } else if (code == 96 || code == 99) {
+    } else if (code == 96 || code == 99 && time == 1) {
         return '<img src="weatherGif/96,99 day thunder rain.gif"/>'
-    } else if (code == 96 || code == 99 && time == 'night') {
+    } else if (code == 96 || code == 99 && time == 0) {
         return '<img src="weatherGif/96,99 night thunder rain.gif"/>'
     }
 }
 
 function showGifWeatherWeekly(code, time) {
-    if (code == 0) {
+    if (code == 0 && time == 1) {
         return '<img width="50px" src="weatherGif/0 day.gif"/>'
-    } else if (code == 0 && time == 'night') {
+    } else if (code == 0 && time == 0) {
         return '<img width="50px" src="weatherGif/0 night.gif"/>'
-    } else if (code == 1) {
+    } else if (code == 1 && time == 1) {
         return '<img width="50px" src="gif/weatherGif/1 day Mostly Clear.gif"/>'
-    } else if (code == 1 && time == 'night') {
+    } else if (code == 1 && time == 0) {
         return '<img width="50px" src="gif/weatherGif/1 night Mostly Clear.gif"/>'
-    } else if (code == 2) {
+    } else if (code == 2 && time == 1) {
         return 
-    } else if (code == 2 && time == 'night') {
+    } else if (code == 2 && time == 0) {
         return
-    } else if (code == 3) {
+    } else if (code == 3 && time == 1) {
         return '<img width="50px" src="weatherGif/3 Overcast day.gif"/>'
-    } else if (code == 3 && time == 'night') {
+    } else if (code == 3 && time == 0) {
         return '<img width="50px" src="weatherGif/3 Overcast night.gif"/>'
-    } else if (code == 45) {
+    } else if (code == 45 && time == 1) {
         return '<img width="50px" src="weatherGif/45 day fog.gif"/>'
-    } else if (code == 45 && time == 'night') {
+    } else if (code == 45 && time == 0) {
         return '<img width="50px" src="weatherGif/45 night fog.gif"/>'
-    } else if (code == 48) {
+    } else if (code == 48 && time == 1) {
         return '<img width="50px" src="weatherGif/48 day icy fog.gif"/>'
-    } else if (code == 48 && time == 'night') {
+    } else if (code == 48 && time == 0) {
         return '<img width="50px" src="weatherGif/48 night icy fog.gif"/>'
-    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82) {
+    } else if (code == 51 && time == 1 || code == 53 && time == 1 || code == 55 && time == 1 ||  code == 61 && time == 1 || code == 63 && time == 1 || code == 65 && time == 1 ||code == 80 && time == 1 || code == 81 && time == 1 || code == 82 && time == 1) {
         return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 day rain.gif"/>'
-    } else if (code == 51 || code == 53 || code == 55 ||  code == 61 || code == 63 || code == 65 ||code == 80 || code == 81 || code == 82 && time == 'night') {
+    } else if (code == 51 && time == 0 || code == 53 && time == 0 || code == 55 && time == 0 ||  code == 61 && time == 0 || code == 63 && time == 0 || code == 65 && time == 0 ||code == 80 && time == 0 || code == 81 && time == 0 || code == 82 && time == 0) {
         return '<img width="50px" src="weatherGif/51,53,55,61,63,65,80,81,82 night rain.gif"/>'
-    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
+    } else if (code == 56 && time == 1 || code == 57 && time == 1 || code == 66 && time == 1 || code == 67 && time == 1) {
         return 
-    } else if (code == 56 || code == 57 || code == 66 || code == 67 && time == 'night') {
+    } else if (code == 56 && time == 0 || code == 57 && time == 0 || code == 66 && time == 0 || code == 67 && time == 0) {
         return 
-    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86) {
+    } else if (code == 71 && time == 1 || code == 73 && time == 1 || code == 75 && time == 1 || code == 77 && time == 1 || code == 85 && time == 1 || code == 86 && time == 1) {
         return '<img width="50px" src="weatherGif/71,73,75,77,85,86 day snow.gif"/>'
-    } else if (code == 71 || code == 73 || code == 75 || code == 77 || code == 85 || code == 86 && time == 'night') {
+    } else if (code == 71 && time == 0 || code == 73 && time == 0 || code == 75 && time == 0 || code == 77 && time == 0 || code == 85 && time == 0 || code == 86 && time == 0) {
         return '<img width="50px" src="weatherGif/71,73,75,77,85,86 night snow.gif"/>'
-    } else if (code == 95) {
+    } else if (code == 95 && time == 1) {
         return '<img width="50px" src="weatherGif/95 day thunder.gif"/>'
-    } else if (code == 95 && time == 'night') {
+    } else if (code == 95 && time == 0) {
         return '<img width="50px" src="weatherGif/95 night thunder.gif"/>'
-    } else if (code == 96 || code == 99) {
+    } else if (code == 96 && time == 1 || code == 99 && time == 1) {
         return '<img width="50px" src="weatherGif/96,99 day thunder rain.gif"/>'
-    } else if (code == 96 || code == 99 && time == 'night') {
+    } else if (code == 96 && time == 0 || code == 99 && time == 0) {
         return '<img width="50px" src="weatherGif/96,99 night thunder rain.gif"/>'
     }
 }
@@ -147,14 +147,19 @@ async function getData(latitude, longitude) {
     try {
         document.getElementById('loader').style.display = 'block'
 
-        const URL =  `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&hourly=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&timezone=Asia%2FSingapore`
+        const URL =  `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m&hourly=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&timezone=Asia%2FSingapore`
         const fetchData = await fetch(URL)
         const dataWeather = await fetchData.json()
+
+        const dayOrNight = dataWeather.current.is_day
+        const day = (dayOrNight == 1)
+        const night = (dayOrNight == 0)
+        const codeWeather = dataWeather.current.weather_code
 
         document.getElementById('currentWeather').innerText =
             showWeatherText(dataWeather.current.weather_code)
         document.getElementById('currentGifWeather').innerHTML =
-            showGifWeather(dataWeather.current.weather_code)
+            showGifWeather(codeWeather, dayOrNight)
         document.getElementById('currentTemperature').innerText =
             dataWeather.current.temperature_2m + '°C'
         document.getElementById('currentApparentTemperature').innerText =
@@ -179,7 +184,9 @@ async function getData(latitude, longitude) {
                             ${dataWeather.daily.wind_speed_10m_max[i]} Km/h
                         </span>
                         <span>
-                            ${showGifWeatherWeekly(element)}
+                            ${showGifWeatherWeekly(element, day)}
+                        <span>
+                            ${showGifWeatherWeekly(element, night)}
                         <span>
                         <span>
                             ${dataWeather.daily.temperature_2m_max[i]}°C
@@ -196,20 +203,20 @@ async function getData(latitude, longitude) {
                 showWeatherText(dataWeather.daily.weather_code[1])
 
             dataWeather.hourly.time.forEach((element, i) => {
-                document.getElementById('morning').innerText =
-                    showWeatherText(dataWeather.hourly.weather_code[6])
+                document.getElementById('morning').innerHTML =
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[6], day)
                 document.getElementById('temperatureMorning').innerText =
                     dataWeather.hourly.temperature_2m[6] + '°'
-                document.getElementById('noon').innerText =
-                    showWeatherText(dataWeather.hourly.weather_code[12])
+                document.getElementById('noon').innerHTML =
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[12], day)
                 document.getElementById('temperatureNoon').innerText =
                     dataWeather.hourly.temperature_2m[12] + '°'
-                document.getElementById('afternoon').innerText =
-                    showWeatherText(dataWeather.hourly.weather_code[18])
+                document.getElementById('afternoon').innerHTML =
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[18], night)
                 document.getElementById('temperatureAfternoon').innerText =
                     dataWeather.hourly.temperature_2m[18] + '°'
-                document.getElementById('night').innerText =
-                    showWeatherText(dataWeather.hourly.weather_code[22])
+                document.getElementById('night').innerHTMLt =
+                    showGifWeatherWeekly(dataWeather.hourly.weather_code[22], night)
                 document.getElementById('temperatureNight').innerText =
                     dataWeather.hourly.temperature_2m[22] + '°'
             })
@@ -287,7 +294,7 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
         let latitude = position.coords.latitude
         let longitude = position.coords.longitude
-        document.getElementById('cityCurrent').innerText = ''
+        document.getElementById('cityCurrent').innerText = 'City Now'
         document.getElementById('nameCity').innerText = ''
         getData(latitude, longitude)
         getAQI(latitude, longitude)
@@ -357,7 +364,6 @@ map.addControl(
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         localGeocoder: coordinatesGeocoder,
-        zoom: 4,
         placeholder: 'Search City',
         mapboxgl: mapboxgl,
         reverseGeocode: true

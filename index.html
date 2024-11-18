@@ -14,6 +14,9 @@
     <link rel="stylesheet"
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.css"
         type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -73,7 +76,7 @@
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="text-center" id="currentGifWeather">
-                                <img class="w-50" src="asset/cloudy.gif" alt="cloudy">
+                                <img class="w-50" src="" alt="">
                             </div>
                             <div class="d-flex justify-content-around">
                                 <span>
@@ -88,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div class="col-12 col-sm-6 d-flex justify-content-center z-0">
                     <div style="height: 37vh;; width: 50vw; margin-top: 100px;" id="map"></div>
                 </div>
         </section>
@@ -101,10 +104,10 @@
                             <span>Monday</span>
                         </div>
                         <div>
-                            <img width="50px" src="asset/water-drop.gif" alt="water-drop">
+                            <img width="50px" src="" alt="">
                             <span>56%</span>
-                            <img width="50px" src="asset/cloudy-day.gif" alt="cloudy-day">
-                            <img width="50px" src="asset/cloudy-night.gif" alt="cloudy-night">
+                            <img width="50px" src="" alt="">
+                            <img width="50px" src="" alt="">
                             <span>34°</span>
                             <span>26°</span>
                         </div>
@@ -125,7 +128,7 @@
                     <div class="d-flex align-items-end">
                         <div class="col-3">
                             <div class="text-center mb-5" id="morning">
-                                <img width="60%" src="asset/sunrise.gif" alt="sunrise">
+                                <img width="60%" src="" alt="">
                             </div>
                             <div class="text-center">
                                 <h1 class="mb-0 mt-3 fs-6 fw-bold" id="temperatureMorning">27°</h1>
@@ -134,7 +137,7 @@
                         </div>
                         <div class="col-3 border-start border-end">
                             <div class="text-center mb-5 pb-5" id="noon">
-                                <img width="60%" src="asset/sun.gif" alt="sun">
+                                <img width="60%" src="" alt="">
                             </div>
                             <div class="text-center">
                                 <h1 class="mb-0 mt-3 fs-6 fw-bold" id="temperatureNoon">35°</h1>
@@ -143,7 +146,7 @@
                         </div>
                         <div class="col-3">
                             <div class="text-center mb-3" id="afternoon">
-                                <img width="40%" src="asset/sunset.gif" alt="sunset">
+                                <img width="40%" src="" alt="">
                             </div>
                             <div class="text-center">
                                 <h1 class="mb-0 mt-3 fs-6 fw-bold" id="temperatureAfternoon">31°</h1>
@@ -152,7 +155,7 @@
                         </div>
                         <div class="col-3 border-start">
                             <div class="text-center mb-5 pb-5" id="night">
-                                <img class="mt-0" width="60%" src="asset/night.gif" alt="Night">
+                                <img class="mt-0" width="60%" src="" alt="">
                             </div>
                             <div class="text-center">
                                 <h1 class="mb-0 mt-3 fs-6 fw-bold" id="temperatureNight">22°</h1>
@@ -162,7 +165,7 @@
                     </div>
                 </div>
                 <!--Tomorrow-->
-                <div class="row col-12 col-sm-4 rounded-5">
+                <div class="row col-12 col-sm-4 rounded-5" id="tomorrow">
                     <div class="col-12">
                         <p class="mb-0 mt-3">Tomorrow</p>
                         <h3 class="mb-0" id="nameCity">Surabaya,Indonesia</h3>
