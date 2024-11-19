@@ -305,21 +305,29 @@ async function getAQI(latitude, longitude) {
             dataAir.current.pm2_5
 
         if (dataAir.current.pm2_5 < 100) {
+            document.getElementById('descAQI').innerHTML =
+                `<p class="mb-0 text-success" id="descAQI">Healthty</p>`
             document.getElementById('bar').innerHTML =
                 `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar bg-success" style="width: 25%"></div>
                         </div>`
         } else if (dataAir.current.pm2_5 > 100 && dataAir.current.pm2_5 <= 200) {
+            document.getElementById('descAQI').innerHTML =
+                `<p class="mb-0 text-warning" id="descAQI">UnHealthty</p>`
             document.getElementById('bar').innerHTML =
                 `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-warning" style="width: 50%"></div>
                     </div>`
         } else if (dataAir.current.pm2_5 > 200 && dataAir.current.pm2_5 <= 300) {
+            document.getElementById('descAQI').innerHTML =
+                `<p class="mb-0 text-danger" id="descAQI">Very UnHealthty</p>`
             document.getElementById('bar').innerHTML =
                 `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-danger" style="width: 75%"></div>
                     </div>`
         } else if (dataAir.current.pm2_5 > 300) {
+            document.getElementById('descAQI').innerHTML =
+                `<p class="mb-0 text-black" id="descAQI">Dangerous</p>`
             document.getElementById('bar').innerHTML =
                 `<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-black" style="width: 100%"></div>
