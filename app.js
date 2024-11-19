@@ -1,3 +1,8 @@
+let latitude = -7.2492
+let longitude = 112.7508
+getData(latitude, longitude)
+getAQI(latitude, longitude)
+
 function showGifWeather(code, time) {
     if (code == 0 && time == 1) {
         return '<img src="weatherGif/0 clear.gif"/>'
@@ -94,27 +99,67 @@ function showGifWeatherWeekly(code, time) {
     }
 }
 
-function showWeatherText(code) {
-    if (code == 0) {
+function showWeatherText(code, time) {
+    if (code == 0 && time == 1) {
+        return 'Sunny'
+    } else if (code == 0 && time == 0) {
         return 'Clear'
-    } else if (code == 1) {
+    } else if (code == 1 && time == 1) {
+        return 'Mostly Sunny'
+    } else if (code == 1 && time == 0) {
         return 'Mostly Clear'
     } else if (code == 2) {
-        return 'Partly Clear'
+        return 'Partly Cloudy'
     } else if (code == 3) {
-        return 'Overcast'
+        return 'Cloudy'
     } else if (code == 45) {
-        return 'Fog'
+        return 'Foggy'
     } else if (code == 48) {
         return 'Icy Fog'
-    } else if (code == 51 || code == 53 || code == 55 || code == 80 || code == 81 || code == 82 || code == 61 || code == 63 || code == 65) {
-        return 'Rainny'
-    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
-        return 'Snow Rain'
-    } else if (code == 77 || code == 85 || code == 86 || code == 71 || code == 73 || code == 75) {
+    } else if (code == 51) {
+        return 'Light Drizzle'
+    } else if (code == 53) {
+        return 'Drizzle'
+    } else if (code == 55) {
+        return 'Heavy Drizzle'
+    } else if (code == 56) {
+        return 'Light Freezing Drizzle'
+    } else if (code == 57) {
+        return 'Freezing Drizzle'
+    } else if (code == 61) {
+        return 'Light Rain'
+    } else if (code == 63) {
+        return 'Rain'
+    } else if (code == 65) {
+        return 'Heavy Rain'
+    } else if (code == 66) {
+        return 'Light Freezing Rain'
+    } else if (code == 67) {
+        return 'Freezing Rain'
+    } else if (code == 71) {
+        return 'Light Snow'
+    } else if (code == 73) {
         return 'Snow'
-    } else if (code == 95 || code == 96 || code == 99) {
-        return 'Storm'
+    } else if (code == 75) {
+        return 'Heavy Snow'
+    } else if (code == 77) {
+        return 'Snow Grains'
+    } else if (code == 80) {
+        return 'Light Showers'
+    } else if (code == 81) {
+        return 'Showers'
+    } else if (code == 82) {
+        return 'Heavy Showers'
+    } else if (code == 85) {
+        return 'Light Snow Showers'
+    } else if (code == 86) {
+        return 'Snow Showers'
+    } else if (code == 95) {
+        return 'Thunderstrom'
+    } else if (code == 96) {
+        return 'Light Thunderstrom With Hail'
+    } else if (code == 99) {
+        return 'Thunderstrom With Hail'
     }
 }
 
@@ -399,6 +444,7 @@ async function getGeocoding() {
         document.getElementById('loader').style.display = 'block'
 
         let cityName = document.getElementById('city-name').value
+        
         document.getElementById('cityCurrent').innerText = cityName
 
         document.getElementById('nameCity').innerText = cityName
@@ -407,9 +453,7 @@ async function getGeocoding() {
         const apiOpenWeather = 'aae2f828e9ad70416fd94dd4a0bfd518'
         const fetchCoordinate = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiOpenWeather}`)
         const dataCoordinate = await fetchCoordinate.json()
-        console.log(dataCoordinate)
         let latitude = dataCoordinate[0].lat
-        console.log(latitude)
         let longitude = dataCoordinate[0].lon
 
         getData(latitude, longitude)
@@ -431,10 +475,12 @@ function getLocation() {
         document.getElementById('nameCity').innerText = 'Surabaya, Indonesia'
         getData(latitude, longitude)
         getAQI(latitude, longitude)
+        setupMapbox(latitude, longitude)
     })
 }
 
 getLocation()
+//MapBox
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg'
 
@@ -444,6 +490,20 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v12',
     zoom: 1 // starting zoom
 })
+
+    // Add geolocate control to the map.
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            // When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        })
+    )
+    map.addControl(new mapboxgl.NavigationControl())
 
 const coordinatesGeocoder = function (query) {
     getGeocoding()
