@@ -224,7 +224,7 @@ async function getData(latitude, longitude) {
         const codeWeather = dataWeather.current.weather_code
 
         document.getElementById('currentWeather').innerText =
-            showWeatherText(dataWeather.current.weather_code)
+            showWeatherText(dataWeather.current.weather_code, dayOrNight)
         document.getElementById('currentGifWeather').innerHTML =
             showGifWeather(codeWeather, dayOrNight)
         document.getElementById('currentTemperature').innerText =
@@ -452,7 +452,6 @@ async function getGeocoding() {
         document.getElementById('loader').style.display = 'block'
 
         let cityName = document.getElementById('city-name').value
-        
         document.getElementById('cityCurrent').innerText = cityName
 
         document.getElementById('nameCity').innerText = cityName
@@ -514,7 +513,6 @@ const map = new mapboxgl.Map({
     map.addControl(new mapboxgl.NavigationControl())
 
 const coordinatesGeocoder = function (query) {
-    getGeocoding()
     // Match anything which looks like
     // decimal degrees coordinate pair.
     const matches = query.match(
