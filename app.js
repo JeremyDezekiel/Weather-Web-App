@@ -188,28 +188,92 @@ setInterval(() => {
 }, 1000)
 
 function bgImage(code) {
-    if (code == 0 || code == 1 || code == 2 || code == 3 || code == 45 || code == 48) {
+    if (code == 0 || code == 1) {
         let element = document.getElementById('tomorrow')
 
-        element.style.backgroundImage = "url('bg-tomorrow/0,1,2.gif')"
+        element.style.backgroundImage = "url('bg-tomorrow/0,1.gif')"
         element.style.backgroundRepeat = 'no-repeat'
         element.style.backgroundPosition = 'right'
-        element.style.backgroundSize = '55%'
-    } else if (code == 51 || code == 53 || code == 55 || code == 61 || code == 63 || code == 65 || code == 80 || code == 81 || code == 82) {
+        element.style.backgroundSize = '67%'
+    } else if (code == 2) {
         let element = document.getElementById('tomorrow')
 
-        element.style.backgroundImage = "url('test.gif')"
+        element.style.backgroundImage = "url('bg-tomorrow/2 Partly Cloudy.gif')"
         element.style.backgroundRepeat = 'no-repeat'
-        element.style.backgroundPosition = 'center'
-        element.style.backgroundSize = '55%'
-    } else if (code == 95 || code == 96 || code == 99) {
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '61%'
+    } else if (code == 3) {
         let element = document.getElementById('tomorrow')
 
-        element.style.backgroundImage = "url('bg-tomorrow/Rain.gif')"
+        element.style.backgroundImage = "url('bg-tomorrow/3 Overcast.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '58%'
+    } else if (code == 45) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/45 Fog.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '63%'
+    } else if (code == 48) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/48 Icy Fog.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '60%'
+    } else if (code == 51 || code == 53 || code == 55 || code == 80 || code == 81) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/51,53,55,80,81 Rain.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '60%'
+    } else if (code == 61 || code == 63 || code == 65 || code == 82) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/61,63,65,82 Rain.gif')"
         element.style.backgroundRepeat = 'no-repeat'
         element.style.backgroundPosition = 'right'
         element.style.backgroundSize = '70%'
-    }
+    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '70%'
+    } else if (code == 77 || code == 85) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/77,85 Snow.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '70%'
+    } else if (code == 73 || code == 75) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/73,75 Snow.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'top right'
+        element.style.backgroundSize = '70%'
+
+    } else if (code == 95) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/95 Thunder.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'top right'
+        element.style.backgroundSize = '58%'
+    } else if (code == 96 || code == 99) {
+        let element = document.getElementById('tomorrow')
+
+        element.style.backgroundImage = "url('bg-tomorrow/96,99 ThunderRain.gif')"
+        element.style.backgroundRepeat = 'no-repeat'
+        element.style.backgroundPosition = 'right'
+        element.style.backgroundSize = '60%'
+    } 
 }
 
 async function getData(latitude, longitude) {
@@ -487,7 +551,8 @@ function getLocation() {
 }
 
 getLocation()
-//MapBox
+
+                           //      MapBox      //
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg'
 
