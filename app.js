@@ -1,9 +1,11 @@
+// Default Web Cordinate //
+
 let latitude = -6.1818
 let longitude = 106.8223
 getData(latitude, longitude)
 getAQI(latitude, longitude)
 
-                            // Desc, Gif, and Image //
+// Desc, Gif, and Image //
 
 function showGifWeather(code, time) {
     if (code == 0 && time == 1) {
@@ -255,10 +257,10 @@ function bgImage(code) {
         element.style.backgroundRepeat = 'no-repeat'
         element.style.backgroundPosition = 'right'
         element.style.backgroundSize = '60%'
-    } 
+    }
 }
 
-                            // Format Date and Time //
+// Format Date and Time //
 
 function formattedDate(date) {
     const options = {
@@ -285,7 +287,7 @@ setInterval(() => {
 }, 1000)
 
 
-                            // Data Weather, AQI, MapBox, Coordinate //
+// Data Weather, AQI, MapBox, Coordinate //
 
 async function getData(latitude, longitude) {
     try {
@@ -568,7 +570,7 @@ function getLocation() {
 
 getLocation()
 
-                           //      MapBox      //
+//      MapBox      //
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0anJyZW5obCJ9.B8bfpQt7BR2Bj-t2DyGKRg'
 
@@ -579,19 +581,19 @@ const map = new mapboxgl.Map({
     zoom: 1 // starting zoom
 })
 
-    // Add geolocate control to the map.
-    map.addControl(
-        new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            // When active the map will receive updates to the device's location as it changes.
-            trackUserLocation: true,
-            // Draw an arrow next to the location dot to indicate which direction the device is heading.
-            showUserHeading: true
-        })
-    )
-    map.addControl(new mapboxgl.NavigationControl())
+// Add geolocate control to the map.
+map.addControl(
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true
+    })
+)
+map.addControl(new mapboxgl.NavigationControl())
 
 const coordinatesGeocoder = function (query) {
     // Match anything which looks like
