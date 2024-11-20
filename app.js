@@ -1,5 +1,5 @@
-let latitude = -7.2492
-let longitude = 112.7508
+let latitude = -6.1818
+let longitude = 106.8223
 getData(latitude, longitude)
 getAQI(latitude, longitude)
 
@@ -104,10 +104,14 @@ function showWeatherText(code, time) {
         return 'Sunny'
     } else if (code == 0 && time == 0) {
         return 'Clear'
+    } else if (code == 0) {
+        return 'Sunny'
     } else if (code == 1 && time == 1) {
         return 'Mostly Sunny'
     } else if (code == 1 && time == 0) {
         return 'Mostly Clear'
+    } else if (code == 1) {
+        return 'Mostly Sunny'
     } else if (code == 2) {
         return 'Partly Cloudy'
     } else if (code == 3) {
@@ -237,13 +241,13 @@ function bgImage(code) {
         element.style.backgroundRepeat = 'no-repeat'
         element.style.backgroundPosition = 'right'
         element.style.backgroundSize = '70%'
-    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
+    } else if (code == 95 || code == 57 || code == 66 || code == 67) {
         let element = document.getElementById('tomorrow')
 
-        element.style.backgroundImage = "url('bg-tomorrow/.gif')"
+        element.style.backgroundImage = "url('bg-tomorrow/56,57,66,67 Freezing Rain.gif')"
         element.style.backgroundRepeat = 'no-repeat'
-        element.style.backgroundPosition = 'right'
-        element.style.backgroundSize = '70%'
+        element.style.backgroundPosition = 'top right'
+        element.style.backgroundSize = '60%'
     } else if (code == 77 || code == 85) {
         let element = document.getElementById('tomorrow')
 
@@ -275,6 +279,8 @@ function bgImage(code) {
         element.style.backgroundSize = '60%'
     } 
 }
+
+                            // Data //
 
 async function getData(latitude, longitude) {
     try {
@@ -532,7 +538,12 @@ async function getGeocoding() {
         setupMapbox(latitude, longitude)
 
     } catch (error) {
-        console.log(error)
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "please insert available location!",
+            footer: 'CityName, Province, Stage'
+        });
     } finally {
         document.getElementById('loader').style.display = 'none'
     }
