@@ -541,9 +541,9 @@ async function getGeocoding() {
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "please insert available location!",
-            footer: 'CityName, Province, Stage'
-        });
+            html: "Please insert available location! </br>format: City Name, Province, Country",
+            confirmButtonColor: "#3085d6"
+        })
     } finally {
         document.getElementById('loader').style.display = 'none'
     }
