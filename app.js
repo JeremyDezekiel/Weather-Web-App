@@ -3,6 +3,8 @@ let longitude = 106.8223
 getData(latitude, longitude)
 getAQI(latitude, longitude)
 
+                            // Desc, Gif, and Image //
+
 function showGifWeather(code, time) {
     if (code == 0 && time == 1) {
         return '<img src="weatherGif/0 clear.gif"/>'
@@ -167,30 +169,6 @@ function showWeatherText(code, time) {
     }
 }
 
-function formattedDate(date) {
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    }
-    const dateFormatted = new Date(date)
-    return dateFormatted.toLocaleDateString('en-US', options)
-}
-
-let unixTime = Math.floor(Date.now() / 1000) + 7 * 3600;
-
-function formatTime(time) {
-    const hours = String(Math.floor(time / 3600) % 24).padStart(2, '0')
-    const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0')
-    const seconds = String(time % 60).padStart(2, '0')
-    return `${hours}:${minutes}:${seconds}`
-}
-
-setInterval(() => {
-    document.getElementById('time').textContent = formatTime(unixTime++)
-}, 1000)
-
 function bgImage(code) {
     if (code == 0 || code == 1) {
         let element = document.getElementById('tomorrow')
@@ -241,7 +219,7 @@ function bgImage(code) {
         element.style.backgroundRepeat = 'no-repeat'
         element.style.backgroundPosition = 'right'
         element.style.backgroundSize = '70%'
-    } else if (code == 95 || code == 57 || code == 66 || code == 67) {
+    } else if (code == 56 || code == 57 || code == 66 || code == 67) {
         let element = document.getElementById('tomorrow')
 
         element.style.backgroundImage = "url('bg-tomorrow/56,57,66,67 Freezing Rain.gif')"
@@ -280,7 +258,34 @@ function bgImage(code) {
     } 
 }
 
-                            // Data //
+                            // Format Date and Time //
+
+function formattedDate(date) {
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    }
+    const dateFormatted = new Date(date)
+    return dateFormatted.toLocaleDateString('en-US', options)
+}
+
+let unixTime = Math.floor(Date.now() / 1000) + 7 * 3600;
+
+function formatTime(time) {
+    const hours = String(Math.floor(time / 3600) % 24).padStart(2, '0')
+    const minutes = String(Math.floor((time % 3600) / 60)).padStart(2, '0')
+    const seconds = String(time % 60).padStart(2, '0')
+    return `${hours}:${minutes}:${seconds}`
+}
+
+setInterval(() => {
+    document.getElementById('time').textContent = formatTime(unixTime++)
+}, 1000)
+
+
+                            // Data Weather, AQI, MapBox, Coordinate //
 
 async function getData(latitude, longitude) {
     try {
@@ -541,7 +546,7 @@ async function getGeocoding() {
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            html: "Please insert available location! </br>format: City Name, Province, Country",
+            html: "Please insert available location! </br>format: City Name, Country </br> Or </br> City Name, Province, Country",
             confirmButtonColor: "#3085d6"
         })
     } finally {
