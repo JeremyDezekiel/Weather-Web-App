@@ -576,7 +576,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbm5lZGUiLCJhIjoiY20zamh2NjloMDN3azJ3cXo0a
 
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    center: [112.740746, -7.262669], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+    center: [106.8223, -6.1818], // starting position [lng, lat]. Note that lat must be set between -90 and 90
     style: 'mapbox://styles/mapbox/streets-v12',
     zoom: 1 // starting zoom
 })
