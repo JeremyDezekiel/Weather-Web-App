@@ -318,15 +318,15 @@ async function getData(latitude, longitude) {
         document.getElementById('weekly').innerHTML = ''
         dataWeather.daily.weather_code.forEach((element, i) => {
             document.getElementById('weekly').innerHTML += `
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-end">
                     <div>
                         <span>${formattedDate(dataWeather.daily.time[i])}</span>
                     </div>
-                    <div>
+                    <div class="d-flex align-items-end">
                         <span>
                             ${dataWeather.daily.wind_speed_10m_max[i]} Km/h
                         </span>
-                        <span>
+                        <span class="d-flex align-items-end">
                             ${showGifWeatherWeekly(element, 1)}
                         <span>
                             ${dataWeather.daily.temperature_2m_max[i]}°C
