@@ -328,7 +328,7 @@ async function getData(latitude, longitude) {
                         </span>
                         <span class="d-flex align-items-end">
                             ${showGifWeatherWeekly(element, 1)}
-                        <span>
+                        <span class="me-2">
                             ${dataWeather.daily.temperature_2m_max[i]}°C
                         </span>
                         <span>
